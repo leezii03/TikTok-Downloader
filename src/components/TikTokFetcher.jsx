@@ -161,6 +161,12 @@ const TikTokFetcher = () => {
             >
               Download Video
             </a>
+            <a
+              href={data.play}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </div>
         </div>
       )}
