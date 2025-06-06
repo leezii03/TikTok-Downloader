@@ -55,6 +55,24 @@ const TikTokFetcher = () => {
     return num.toString();
   };
 
+  const handleDownload = async () => {
+    try {
+      const res = await fetch(data.play);
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${data.author.nickname || "video"}.mp4`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      alert("Failed to download the video.");
+    }
+  };
+
   return (
     <div className="w-full max-w-xl bg-white rounded-xl shadow p-6 space-y-4">
       <h1 className="text-2xl font-semibold text-gray-800 text-center">
@@ -152,24 +170,12 @@ const TikTokFetcher = () => {
             </p>
           </div>
           <div className="px-4 mt-4">
-            <a
-              href={data.play}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleDownload}
               className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
             >
               Download Video
-            </a>
-            <a
-              href={data.play}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
-            >
-              Download
-            </a>
+            </button>
           </div>
         </div>
       )}
