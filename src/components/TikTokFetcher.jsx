@@ -9,6 +9,8 @@ const TikTokFetcher = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   const handleFetch = async () => {
     if (!url.trim()) return;
 
@@ -170,12 +172,29 @@ const TikTokFetcher = () => {
             </p>
           </div>
           <div className="px-4 mt-4">
-            <button
-              onClick={handleDownload}
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
-            >
-              Download Video
-            </button>
+            {isMobile ? (
+              <>
+                <a
+                  href={data.play}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
+                >
+                  Open Video (Long press to save)
+                </a>
+                <p className="text-sm text-gray-500 mt-2">
+                  On mobile, long press the video and select "Download" or "Save
+                  Video".
+                </p>
+              </>
+            ) : (
+              <button
+                onClick={handleDownload}
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
+              >
+                Download Video
+              </button>
+            )}
           </div>
         </div>
       )}
