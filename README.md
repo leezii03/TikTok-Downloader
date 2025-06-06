@@ -31,22 +31,50 @@ cd tiktok-video-downloader
 ```
 
 ### 2️⃣ Install dependencies
+
 ```sh
 npm install
 ```
 
-### 3️⃣ Setup Environment Variables
+### 3️⃣ Tailwind CSS Setup
+
+```sh
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+
+- tailwind.config.js
+    /** @type {import('tailwindcss').Config} */
+    export default {
+        content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+        theme: {
+            extend: {},
+        },
+        plugins: [],
+    };
+    
+- src/index.css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+```
+
+### 4️⃣ Setup Environment Variables
+
 ```sh
 VITE_API_KEY=your_rapidapi_key
 VITE_API_URL=https://tiktok-video-no-watermark2.p.rapidapi.com
 ```
 
-### 4️⃣ Run the project
+### 5️⃣ Run the project
+
 ```sh
 npm run dev
 ```
 
-### 5️⃣ Folder Structure
+### 6️⃣ Folder Structure
+
 ```sh
 src/
 ├── components/
