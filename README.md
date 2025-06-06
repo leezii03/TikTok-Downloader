@@ -1,6 +1,6 @@
 # TikTok Video Downloader
 
-A simple and responsive TikTok Video Downloader built with **React.js**. This app allows users to paste a TikTok video URL and download the video without a watermark in HD quality using the RapidAPI endpoint.
+A simple and responsive TikTok Video Downloader built with **React.js**. This app allows users to paste a TikTok video URL and download the video without a watermark in HD quality using the RapidAPI endpoint. Note: This downloader currently supports only PC browsers.
 
 ## ✨ Features
 
@@ -23,22 +23,35 @@ A simple and responsive TikTok Video Downloader built with **React.js**. This ap
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+### 1️⃣ Clone the repository
 
-```bash
-git clone https://github.com/yourusername/tiktok-video-downloader.git
+```sh
+git clone https://github.com/leezii03/TikTok-Downloader.git
 cd tiktok-video-downloader
+```
 
+### 2️⃣ Install dependencies
+```sh
 npm install
+```
 
+### 3️⃣ Setup Environment Variables
+```sh
 VITE_API_KEY=your_rapidapi_key
 VITE_API_URL=https://tiktok-video-no-watermark2.p.rapidapi.com
+```
 
+### 4️⃣ Run the project
+```sh
 npm run dev
+```
 
+### 5️⃣ Folder Structure
+```sh
 src/
 ├── components/
 │   └── TikTokFetcher.jsx
 ├── App.jsx
 ├── main.jsx
 └── ...
+```
