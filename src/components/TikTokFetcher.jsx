@@ -55,6 +55,17 @@ const TikTokFetcher = () => {
     return num.toString();
   };
 
+  const handleDownload = async () => {
+    const response = await fetch(data.play);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "video.mp4"; // or extract from data
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="w-full max-w-xl bg-white rounded-xl shadow p-6 space-y-4">
       <h1 className="text-2xl font-semibold text-gray-800 text-center">
@@ -153,10 +164,7 @@ const TikTokFetcher = () => {
           </div>
           <div className="px-4 mt-4">
             <a
-              href={data.play}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={handleDownload}
               className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
             >
               Download Video
