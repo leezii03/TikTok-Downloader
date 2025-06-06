@@ -1,12 +1,44 @@
-# React + Vite
+# TikTok Video Downloader
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive TikTok Video Downloader built with **React.js**. This app allows users to paste a TikTok video URL and download the video without a watermark in HD quality using the RapidAPI endpoint.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Paste and fetch TikTok videos using a public URL.
+- Download videos in HD without a watermark.
+- Display author nickname, video title, and engagement stats:
+  - Likes
+  - Comments
+  - Bookmarks
+  - Shares
+- Responsive and clean UI with Tailwind CSS.
+- Error handling and loading states.
 
-## Expanding the ESLint configuration
+## 📦 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js (Vite)
+- Tailwind CSS
+- RapidAPI (TikTok Video No Watermark API)
+- HTML5 Video Player
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/tiktok-video-downloader.git
+cd tiktok-video-downloader
+
+npm install
+
+VITE_API_KEY=your_rapidapi_key
+VITE_API_URL=https://tiktok-video-no-watermark2.p.rapidapi.com
+
+npm run dev
+
+src/
+├── components/
+│   └── TikTokFetcher.jsx
+├── App.jsx
+├── main.jsx
+└── ...
